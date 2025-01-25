@@ -1,0 +1,26 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block title %} 
+    All My Posts
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'app_blog/post.css' %}" />
+    <link rel="stylesheet" href="{% static 'app_blog/all_posts.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <section id="all-posts">
+        <h2>All My Blogs</h2>  
+        <ul>
+            {% for post in all_posts %}
+                {% include "app_blog/includes/post.html" %}
+            {% empty %}
+                <li>No posts available at the moment. Check back later!</li>
+            {% endfor %}
+        </ul>   
+    </section>
+</div><!-- .content -->
+{% endblock %}

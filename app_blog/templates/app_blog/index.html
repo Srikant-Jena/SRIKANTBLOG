@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+My Blog
+{% endblock %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static 'app_blog/index.css' %}" />
+  <link rel="stylesheet" href="{% static 'app_blog/post.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="wrap">
+    <div class="sidebar">
+      <section id="welcome">
+          <header>
+              <img class="box" src="{% static 'app_blog/img/profile.png' %}"/>
+              <h2>Srikant</h2>
+          </header>
+          <p>Hello Friends, welcome to Srikant's blog</p>
+      </section>
+  </div><!-- .sidebar -->
+  
+    <div class="content">
+        <section id="latest-posts">
+            <h2>Latest Blogs</h2>
+            <div class="posts-container">
+                {% for post in posts %}
+                    <div class="post">
+                        {% include "app_blog/includes/post.html" %}
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div><!-- .content -->
+
+   
+
+    <div class="clear"></div>
+</div><!-- .wrap -->
+{% endblock %}

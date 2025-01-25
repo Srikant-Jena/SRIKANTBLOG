@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Post Detail
+{% endblock %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "app_blog/post_detail.css" %}" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+{% endblock %}
+
+{% block content %}
+<div class="wrap">
+    <!-- Blog Section -->
+    <div class="sidebar">
+        <section id="welcome">
+           <h2>{{ post.title }}</h2>
+           <article>
+               <img src="{{ post.image.url }}" alt="{{ post.title }}" />
+               <address>
+                   By {{ post.author }}
+               </address>
+               Last updated on <time>{{ post.date | date:"d M Y" }}</time>
+               {% if user.id == post.author.id %}
+                   <a class="btn btn-outline-secondary" href="{% url 'update_post_page' post.slug %}">Update</a>
+                   <a class="btn btn-outline-danger" href="{% url 'delete_post_page' post.slug %}">Delete</a>
+               {% endif %}
+           </article>
+        </section>
+    </div>
+    
+    <!-- Blog Content -->
+    <div class="contentdetail">
+        <h3>Blog Content</h3>
+        <p>
+            {{ post.content | linebreaks }}
+        </p>
+    </div>
+    
+    <!-- User Comments Section -->
+    <section id="comments" class="box">
+        <h4>User Comments</h4>
+        <div class="comment-list">
+            {% for comment in comments %}
+                <div class="comment-item">
+                    <div class="comment-header">
+                        <h5 class="comment-user">{{ comment.user_name }}</h5>
+                        <span class="comment-date">
+                            {{ comment.timestamp|date:"d M Y, H:i" }}
+                        </span>
+                    </div>
+                    <p class="comment-text">{{ comment.text | linebreaks }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    
+    <!-- Comment Form Section -->
+    <div class="content box">
+        <section id="comment-form">
+            <h4>Have Your Say</h4>
+            <p>Please tell us what you think, {{ user.username }}</p>
+            <form action="{% url "detail_posts_page" post.slug %}" method="POST">
+                {% csrf_token %}
+                {% for form_field in comment_form %}
+                    <div class="form-control {% if form_field.errors %}invalid{% endif %}">
+                        {{ form_field.label_tag }}
+                        {{ form_field }}
+                        {{ form_field.errors }}
+                    </div>
+                {% endfor %}
+                <button>Save Comment</button>
+            </form>
+        </section>
+    </div>
+</div>
+{% endblock %}

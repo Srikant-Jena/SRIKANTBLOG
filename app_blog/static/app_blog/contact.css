@@ -1,0 +1,64 @@
+/* General Icon Styling */
+.fa-brands {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    padding: 15px;
+    margin: 5px 10px;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    /* Larger icon size for better visibility */
+    background-color: #444;
+    border-radius: 50%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.fa-brands:hover {
+    transform: scale(1.2);
+    /* Modern zoom effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific Platform Colors */
+.fa-facebook-square {
+    background-color: #1877f2;
+}
+
+.fa-youtube {
+    background-color: #ff0000;
+}
+
+.fa-instagram {
+    background: radial-gradient(circle at 30% 30%, #feda77, #d62976, #962fbf, #4f5bd5);
+}
+
+.fa-pinterest {
+    background-color: #e60023;
+}
+
+/* Contact Text */
+.contact-text {
+    margin-left: 20px;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Contact Heading */
+.contact-h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #222;
+    margin-bottom: 30px;
+}
+
+/* Text Box */
+.text-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}

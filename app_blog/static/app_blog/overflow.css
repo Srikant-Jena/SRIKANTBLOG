@@ -1,0 +1,36 @@
+.content {
+    padding: 1rem;
+    /* Use rem for consistent scaling */
+    border-radius: 12px;
+    width: 100%;
+    max-width: 680px;
+    /* Ensures responsiveness */
+    height: auto;
+    min-height: 570px;
+    /* Prevents content collapse */
+    background: linear-gradient(to right top, #b5b1c4, #38a538);
+    float: right;
+    overflow-y: auto;
+    /* Enables vertical scrolling when necessary */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    /* Adds subtle shadow for depth */
+}
+
+/* Hide scrollbar for modern browsers */
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.content {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Optional: Add padding to the right to prevent content overlap */
+.content {
+    padding-right: 1.5rem;
+    /* Allows space where scrollbar would be */
+}

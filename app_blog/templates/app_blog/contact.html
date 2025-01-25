@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Contact Us
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "app_blog/index.css" %}" />
+<link rel="stylesheet" href="{% static "app_blog/contact.css" %}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="wrap">
+    <div class="sidebar">
+        <section id="welcome">
+            <header>
+                <img src="{% static "app_blog/img/profile.png" %}" alt="Profile" />
+                <h2>Follow Us</h2>
+            </header>
+            <p>Send all your doubts/queries here</p>
+        </section>
+    </div><!-- .sidebar -->
+
+    <div class="content">
+        <section id="latest-posts">
+            <h2 class="contact-h1">Contact Us</h2>
+
+            <div class="text-box">
+                <a href="https://www.facebook.com/srikant.jena.737001/" class="fa-brands fa-facebook-square"></a>
+                <p class="contact-text">facebook.com/srikantjena</p>
+            </div>
+
+            <div class="text-box">
+                <a href="https://www.youtube.com/@srikantjena" class="fa-brands fa-youtube"></a>
+                <p class="contact-text">youtube.com/@srikantjena</p>
+            </div>
+
+            <div class="text-box">
+                <a href="https://www.instagram.com/srikant-jena/" class="fa-brands fa-instagram"></a>
+                <p class="contact-text">instagram.com/srikantjena/</p>
+            </div>
+
+            <div class="text-box">
+                <a href="https://in.pinterest.com/srikantjena/" class="fa-brands fa-pinterest"></a>
+                <p class="contact-text">pinterest.com/srikantjena</p>
+            </div>
+        </section>
+    </div><!-- .content -->
+
+    <div class="clear"></div>
+</div><!-- .wrap -->
+{% endblock %}

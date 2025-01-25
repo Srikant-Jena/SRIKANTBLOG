@@ -1,0 +1,84 @@
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Fixed alignment to center */
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for better visual separation */
+    background: #ffffff;
+    /* Added background color for clarity */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* Smooth interaction feedback */
+}
+
+.post:hover {
+    transform: scale(1.05);
+    /* Slight scale effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Enhanced shadow on hover */
+}
+
+.post a {
+    text-decoration: none;
+    color: #333;
+    /* More readable text color */
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    /* Adjusted padding for better spacing */
+    border-radius: 4px;
+    /* Slight rounding for buttons */
+}
+
+.post a:hover,
+.post a:active {
+    background-color: #14a395;
+    /* Bright interactive background */
+    color: #ffffff;
+    /* White text for contrast */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    /* Button shadow effect */
+}
+
+.post img {
+    width: 6.5rem;
+    height: 6.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Ensures circular shape */
+    margin-bottom: 0.5rem;
+    /* Spacing below the image */
+    transition: transform 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.post img:hover {
+    transform: scale(1.1);
+    /* Slight zoom effect on hover */
+}
+
+.post h3 {
+    margin: 0.5rem 0;
+    /* Balanced spacing */
+    font-size: 1.2rem;
+    /* Slightly larger for better readability */
+    color: #333;
+    /* Consistent text color */
+}
+
+.post time {
+    color: #666666;
+    /* Neutral color for time display */
+    margin-top: 0.25rem;
+    font-style: italic;
+    font-size: 0.9rem;
+    /* Slightly larger font for readability */
+}
+
+.post:hover time,
+.post:active time {
+    color: #ffffff;
+    /* White text for hover/active state */
+}

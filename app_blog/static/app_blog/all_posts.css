@@ -1,0 +1,81 @@
+body {
+    background-color: #ffffff;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    /* Default font for consistency */
+    line-height: 1.6;
+    /* Improve text readability */
+}
+
+.content {
+    margin: 20px auto;
+    /* Centers the content horizontally */
+    padding: 20px;
+    /* Adds consistent spacing */
+    border-radius: 12px;
+    width: 90%;
+    /* Makes it responsive */
+    max-width: 1200px;
+    background: linear-gradient(to right top, #af8f76, #d89a15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Adds subtle elevation */
+    overflow: hidden;
+    /* Prevents content overflow */
+}
+
+#all-posts {
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 60rem;
+}
+
+#all-posts h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2ecf2e;
+    margin: 2rem 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    gap: 1.5rem;
+}
+
+.post img {
+    width: 100%;
+    /* Ensures responsiveness */
+    height: auto;
+    /* Maintains aspect ratio */
+    max-height: 15rem;
+    /* Caps the height */
+    border-radius: 12px;
+    /* Matches the container radius */
+    object-fit: cover;
+    /* Ensures the image fills the area */
+}
+
+.post a {
+    display: block;
+    /* Ensures the entire area is clickable */
+    padding: 15px;
+    height: auto;
+    /* Allows content to adjust dynamically */
+    transform-origin: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    background-color: white;
+    text-decoration: none;
+    /* Removes underline from links */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Adds smooth hover effect */
+}
+
+.post a:hover {
+    transform: scale(1.05);
+    /* Subtle zoom effect on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
