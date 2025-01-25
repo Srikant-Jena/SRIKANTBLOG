@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 SECRET_KEY = config("SECRET_KEY")
-DEBUG = config("DEBUG", cast=bool)
+DEBUG = config("DEBUG", cast=bool, default=True)
 
 # ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="").split(",")
 ALLOWED_HOSTS = [".vercel.app", ".now.sh"]
